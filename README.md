@@ -23,3 +23,7 @@ these steps to set up and run the Ecommerce application:
 - Configure Database Connection: Open the appsettings.json file located in the Ecom project. Update the ConnectionStrings section with the appropriate connection string for your SQL Server instance.
 
 - Build and Run: Once the application runs the database migrations will applied automatically, build the solution (Build > Build Solution). Then, set the startup project to Ecom.API and run the application (Debug > Start Debugging or press F5).
+
+## Documentation
+
+[API Documentation](https://github.com/ahmetsukkar/Ecommerce-API/blob/master/Ecommerce%20API%20Document.pdf)
