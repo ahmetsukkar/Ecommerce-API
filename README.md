@@ -24,6 +24,9 @@ these steps to set up and run the Ecommerce application:
 
 - Build and Run: Once the application runs the database migrations will applied automatically, build the solution (Build > Build Solution). Then, set the startup project to Ecom.API and run the application (Debug > Start Debugging or press F5).
 
-## Documentation
+
+## Document and Files
 
 [API Documentation](https://github.com/ahmetsukkar/Ecommerce-API/blob/master/Ecommerce%20API%20Document.pdf)
+
+[Postman file](https://github.com/ahmetsukkar/Ecommerce-API/blob/master/Ecommerece-App-ASP.NET%207.postman_collection.json)
