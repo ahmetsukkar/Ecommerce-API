@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "213f57e0-705b-4f1a-aba0-1b05e296707e",
+		"name": "Ecommerece-App-ASP.NET 7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "get-all-categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Categories/get-all-categories",
+							"host": [
+								"{{ecom-url}}Categories"
+							],
+							"path": [
+								"get-all-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-category-by-id/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Categories/get-category-by-id/{id}",
+							"host": [
+								"{{ecom-url}}Categories"
+							],
+							"path": [
+								"get-category-by-id",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "get-all-products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Products/get-all-products?pageNumber=1&pageSize=10",
+							"host": [
+								"{{ecom-url}}Products"
+							],
+							"path": [
+								"get-all-products"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "PriceAsce",
+									"disabled": true
+								},
+								{
+									"key": "Search",
+									"value": "Algorithms",
+									"disabled": true
+								}
+							]
+						},
+						"description": "check query params"
+					},
+					"response": []
+				},
+				{
+					"name": "get-product-by-id/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Products/get-product-by-id/{id}",
+							"host": [
+								"{{ecom-url}}Products"
+							],
+							"path": [
+								"get-product-by-id",
+								"{id}"
+							]
+						},
+						"description": "Fill Data --> [FromRoute] Id"
+					},
+					"response": []
+				},
+				{
+					"name": "add-new-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcEBlbXAuY29tIiwiZ2l2ZW5fbmFtZSI6ImVtcFVzZXIiLCJuYmYiOjE3MTEwMDk2MzksImV4cCI6MTcxMTI2ODgzOSwiaWF0IjoxNzExMDA5NjM5LCJpc3MiOiJlQ29tbWVyZWNlQXBwIn0.K6Qi71XiIHVuhIEm5pHzSZWwX7BnB28j0wyCXehTQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CategoryId",
+									"value": "1",
+									"description": "Not Required (By default CategotyId is 1) that mean Books Category",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "Name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ecom-url}}Products/add-new-product",
+							"host": [
+								"{{ecom-url}}Products"
+							],
+							"path": [
+								"add-new-product"
+							]
+						},
+						"description": "Fill Data [FromForm]"
+					},
+					"response": []
+				},
+				{
+					"name": "update-exiting-product-by-id/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImdpdmVuX25hbWUiOiJhZG1pbiIsIm5iZiI6MTcxMTAxNDMzNSwiZXhwIjoxNzExMjczNTM1LCJpYXQiOjE3MTEwMTQzMzUsImlzcyI6ImVDb21tZXJlY2VBcHAifQ.uu96x_vryqDi4XkHzDuj-wj5hoSNs8J4MIrrlO3J1g0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CategoryId",
+									"value": "1",
+									"description": "Not Required (By default CategotyId is 1) that mean Books Category",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ecom-url}}Products/update-exiting-product-by-id/{id}",
+							"host": [
+								"{{ecom-url}}Products"
+							],
+							"path": [
+								"update-exiting-product-by-id",
+								"{id}"
+							]
+						},
+						"description": "Fill Data [FromRoute] Id, [FromForm]"
+					},
+					"response": []
+				},
+				{
+					"name": "delete-product-by-id/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImdpdmVuX25hbWUiOiJhZG1pbiIsIm5iZiI6MTcxMTAxNDMzNSwiZXhwIjoxNzExMjczNTM1LCJpYXQiOjE3MTEwMTQzMzUsImlzcyI6ImVDb21tZXJlY2VBcHAifQ.uu96x_vryqDi4XkHzDuj-wj5hoSNs8J4MIrrlO3J1g0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Products/delete-product-by-id/{id}",
+							"host": [
+								"{{ecom-url}}Products"
+							],
+							"path": [
+								"delete-product-by-id",
+								"{id}"
+							]
+						},
+						"description": "Id ==> [FromRoute]"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ecom-url}}Accounts/login",
+							"host": [
+								"{{ecom-url}}Accounts"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "[FromBody] (JSON)\r\n{\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"_comment\": \"//Roles['Admin', 'Employee', 'Customer']\",\r\n  \"email\": \"string\",\r\n  \"displayName\": \"string\",\r\n  \"role\": \"Customer\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ecom-url}}Accounts/register",
+							"host": [
+								"{{ecom-url}}Accounts"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "[FromBody] (JSON)\r\n{\r\n  \"_comment\": \"//Roles['Admin', 'Employee', 'Customer']\",\r\n  \"email\": \"string\",\r\n  \"displayName\": \"string\",\r\n  \"role\": \"Customer\",\r\n  \"password\": \"string\"\r\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "get-current-user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Accounts/get-current-user",
+							"host": [
+								"{{ecom-url}}Accounts"
+							],
+							"path": [
+								"get-current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check-email-exist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcEBlbXAuY29tIiwiZ2l2ZW5fbmFtZSI6ImVtcEBlbXAuY29tIiwibmJmIjoxNzExMDcwMjczLCJleHAiOjE3MTEzMjk0NzMsImlhdCI6MTcxMTA3MDI3MywiaXNzIjoiZUNvbW1lcmVjZUFwcCJ9.t7PdqDHfEI9pnpjbbiBi7YLneW4J5XHp9T54gBxo1Fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Accounts/check-email-exist/{email}",
+							"host": [
+								"{{ecom-url}}Accounts"
+							],
+							"path": [
+								"check-email-exist",
+								"{email}"
+							]
+						},
+						"description": "[FromRoute] email"
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Accounts/get-all-user",
+							"host": [
+								"{{ecom-url}}Accounts"
+							],
+							"path": [
+								"get-all-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "create-order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcEBlbXAuY29tIiwiZ2l2ZW5fbmFtZSI6ImVtcEBlbXAuY29tIiwibmJmIjoxNzExMDcwMjczLCJleHAiOjE3MTEzMjk0NzMsImlhdCI6MTcxMTA3MDI3MywiaXNzIjoiZUNvbW1lcmVjZUFwcCJ9.t7PdqDHfEI9pnpjbbiBi7YLneW4J5XHp9T54gBxo1Fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"CustomerEmail\": \"emp@emp.com\",\r\n  \"BasketItems\": [\r\n    {\r\n      \"id\": 21,\r\n      \"price\": 56,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"id\": 24,\r\n      \"price\": 114,\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ecom-url}}Orders/create-order",
+							"host": [
+								"{{ecom-url}}Orders"
+							],
+							"path": [
+								"create-order"
+							]
+						},
+						"description": "[FromBody] (JSON)\r\n{\r\n  \"CustomerEmail\": \"string\",\r\n  \"BasketItems\": [\r\n    {\r\n      \"id\": 0,\r\n      \"price\": 0,\r\n      \"quantity\": 0\r\n    }\r\n  ]\r\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "get-orders-for-current-user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcEBlbXAuY29tIiwiZ2l2ZW5fbmFtZSI6ImVtcEBlbXAuY29tIiwibmJmIjoxNzExMDcwMjczLCJleHAiOjE3MTEzMjk0NzMsImlhdCI6MTcxMTA3MDI3MywiaXNzIjoiZUNvbW1lcmVjZUFwcCJ9.t7PdqDHfEI9pnpjbbiBi7YLneW4J5XHp9T54gBxo1Fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Orders/get-orders-for-current-user",
+							"host": [
+								"{{ecom-url}}Orders"
+							],
+							"path": [
+								"get-orders-for-current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-orders-for-current-user-by-id/{orderId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcEBlbXAuY29tIiwiZ2l2ZW5fbmFtZSI6ImVtcEBlbXAuY29tIiwibmJmIjoxNzExMDcwMjczLCJleHAiOjE3MTEzMjk0NzMsImlhdCI6MTcxMTA3MDI3MywiaXNzIjoiZUNvbW1lcmVjZUFwcCJ9.t7PdqDHfEI9pnpjbbiBi7YLneW4J5XHp9T54gBxo1Fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Orders/get-orders-for-current-user-by-id/{orderId}",
+							"host": [
+								"{{ecom-url}}Orders"
+							],
+							"path": [
+								"get-orders-for-current-user-by-id",
+								"{orderId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-orders-by-user-email/{email}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcEBlbXAuY29tIiwiZ2l2ZW5fbmFtZSI6ImVtcEBlbXAuY29tIiwibmJmIjoxNzExMDcwMjczLCJleHAiOjE3MTEzMjk0NzMsImlhdCI6MTcxMTA3MDI3MywiaXNzIjoiZUNvbW1lcmVjZUFwcCJ9.t7PdqDHfEI9pnpjbbiBi7YLneW4J5XHp9T54gBxo1Fw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecom-url}}Orders/get-orders-by-user-email/{email}",
+							"host": [
+								"{{ecom-url}}Orders"
+							],
+							"path": [
+								"get-orders-by-user-email",
+								"{email}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ecom-url",
+			"value": "https://localhost:44334/api/"
+		}
+	]
+}
